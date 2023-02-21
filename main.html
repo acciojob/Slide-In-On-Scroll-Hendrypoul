@@ -60,12 +60,14 @@
 	  function addSlide(){
 		  var scrolledImages = document.querySelectorAll('.slide-in');
 		  scrolledImages.forEach((img) => {
-			  var scrolledHeight = window.scrolly + window.innerHeight - img.height / 2;
-			  var imageBottomHeight = img.offsetTop + img.height;
+			  var scrolledHeight = window.scrollY + window.innerHeight - img.height / 2;
+			  var imageBottomHeight = img.offsetTop + img.height	
 			  var isImageHalfScrolled = scrolledHeight > img.offsetTop;
-			  var isImageFullyScrolled = window.scrolly > imageBottomHeight;
+			  var isImageFullyScrolled = window.scrollY > imageBottomHeight;
+			  
 			  if (isImageHalfScrolled && !isImageFullyScrolled) {
 				  img.classList.add("active");
+				  console.log("active")
 			  }
 			  else{
 				  img.classList.remove("active");
